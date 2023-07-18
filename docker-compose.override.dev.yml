@@ -4,8 +4,7 @@ version: '3.9'
 services:
   app:
     volumes:
-      - ./files_input:/wd/files_input:ro
-      - ./files_output:/wd/files_output:rw
+      - ./db:/wd/db:rw
     user: "1000"
     ports:
       - "5000:5000"
