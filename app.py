@@ -117,7 +117,7 @@ def phone__delete(phone_id: int):
 
 
 @app.route("/phones/delete-all")
-def phones__delete_all(amount_of_phones: int = 10):
+def phones__delete_all():
     with DBConnection() as connection:
         with connection:
             connection.execute("DELETE FROM phones WHERE (1=1);")
