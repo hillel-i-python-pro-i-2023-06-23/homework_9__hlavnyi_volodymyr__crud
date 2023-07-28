@@ -40,13 +40,17 @@ def phones__read_all():
     with DBConnection() as connection:
         with connection:
             phones = connection.execute("SELECT * FROM phones;").fetchall()
-
-    return "<br>".join([f'{phone["phone_id"]}: {phone["contact_name"]} - {phone["phone_value"]}' for phone in phones])
+    if phones is None:
+        return "<br> Don`t found any phones...</br>"
+    else:
+        return "<br>".join(
+            [f'{phone["phone_id"]}: {phone["contact_name"]} - {phone["phone_value"]}' for phone in phones]
+        )
 
 
 @app.route("/phones/create-all")
 @app.route("/phones/create-all/<int:amount_of_phones>")
-def phones__create_all(amount_of_phones: int = 10):
+def phones__create_all(amount_of_phones: int = 20):
     phones = generate_list_of_phones(amount=amount_of_phones)
     for phone in phones:
         with DBConnection() as connection:

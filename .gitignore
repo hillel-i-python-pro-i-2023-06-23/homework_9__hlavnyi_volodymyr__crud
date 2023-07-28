@@ -163,4 +163,4 @@ cython_debug/
 docker-compose.override.yml
 
 db/**
-!db/.gitkeep
+/venv2/
