@@ -7,7 +7,7 @@ def create_table():
             connection.execute(
                 """
                 CREATE TABLE IF NOT EXISTS phones (
-                phone_id INTEGER PRIMARY KEY AUTOINCREMENT  NOT NULL,
+                phone_id INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL,
                 contact_name VARCHAR NOT NULL,
                 phone_value VARCHAR NOT NULL
                 )

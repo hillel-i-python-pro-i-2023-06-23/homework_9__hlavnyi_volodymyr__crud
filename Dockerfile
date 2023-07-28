@@ -23,4 +23,6 @@ COPY --chown=${USER} ./application application
 
 USER ${USER}
 
+VOLUME ${WORKDIR}/db
+
 ENTRYPOINT ["flask", "run"]
