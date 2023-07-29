@@ -2,7 +2,7 @@
 # Make all actions needed for run homework from zero.
 d-homework-i-run:
 	@make init-configs &&\
-	make d-run
+	make homework-i-run
 
 .PHONY: d-homework-i-purge
 # Make all actions needed for purge homework related data.
