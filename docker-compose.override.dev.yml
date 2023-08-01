@@ -3,10 +3,9 @@ version: '3.9'
 
 services:
   app:
+    user: ${UID}
     volumes:
-      - ./files_input:/wd/files_input:ro
-      - ./files_output:/wd/files_output:rw
-    user: "1000"
+      - ./db:/wd/db:rw
     ports:
       - "5000:5000"
     command:
